@@ -57,13 +57,37 @@ try {
 	console.log('📤 Publishing to npm...')
 	await Bun.$`npm publish --access public`.cwd(packageDir)
 
-	// Git operations
+	// Enhanced git operations section
 	console.log('🔖 Creating git tag and commit...')
-	await Bun.$`git add ${pkgJsonPath}`
-	await Bun.$`git commit -m "chore: release ${packageName}@${updatedPkg.version}"`
-	await Bun.$`git tag "${packageName}@${updatedPkg.version}"`
-	await Bun.$`git push origin main`
-	await Bun.$`git push origin "${packageName}@${updatedPkg.version}"`
+
+	async function runGitOperations() {
+		try {
+			// Check if there are changes to commit
+			const status = await Bun.$`git status --porcelain ${pkgJsonPath}`.text()
+			if (!status.trim()) {
+				console.log('📝 No changes to commit')
+				return
+			}
+
+			// Stage and commit
+			await Bun.$`git add ${pkgJsonPath}`
+			await Bun.$`git commit -m "chore: release ${packageName}@${newVersion}"`
+
+			// Create tag
+			await Bun.$`git tag "${packageName}@${newVersion}"`
+
+			// Push commit and tags
+			await Bun.$`git push origin HEAD`
+			await Bun.$`git push origin "${packageName}@${newVersion}"`
+
+			console.log('✅ Git operations completed successfully')
+		} catch (gitError) {
+			console.warn('⚠️ Git operations failed:', gitError)
+			console.log('📦 Package was published to npm, but git operations failed')
+		}
+	}
+
+	await runGitOperations()
 
 	console.log(`✅ Successfully published ${packageName}@${updatedPkg.version}`)
 } catch (error) {
