@@ -1,6 +1,7 @@
 {
 	"name": "@mdrv/sv",
-	"private": "true",
+	"private": true,
+	"type": "module",
 	"workspaces": ["packages/*[^~]"],
 	"packageManager": "bun@1.3.2",
 	"prettier": {
@@ -11,11 +12,15 @@
 		"tabWidth": 4
 	},
 	"scripts": {
-		"build": "bun run build:all",
-		"build:all": "bunx turbo run build",
-		"publish-package": "bun run scripts/publish.ts"
+		"build": "bun run ./scripts/build.ts",
+		"publish-package": "bun run ./scripts/publish.ts"
 	},
 	"devDependencies": {
+		"@types/bun": "^1.3.2",
+		"@types/node": "^24.10.1",
 		"turbo": "^latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
 	}
 }
