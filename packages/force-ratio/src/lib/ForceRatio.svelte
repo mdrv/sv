@@ -10,7 +10,7 @@ A constrainer to specific aspect ratio. Default to 1x1.
 	import type { ClassValue } from 'svelte/elements'
 	import { MediaQuery } from 'svelte/reactivity'
 
-	export type Mode = {
+	export type ForceRatioMode = {
 		width: number
 		height: number
 		restrictWidth?: boolean
@@ -18,7 +18,7 @@ A constrainer to specific aspect ratio. Default to 1x1.
 		padding: number | string | null
 	}
 
-	const DEFAULT_MODE: Mode = {
+	const DEFAULT_MODE: ForceRatioMode = {
 		width: 1,
 		height: 1,
 		padding: 0,
@@ -60,9 +60,9 @@ A constrainer to specific aspect ratio. Default to 1x1.
 		 * }
 		 * ```
 		 */
-		modes: Record<string, Mode>
-		defaultMode?: Mode
-		currentMode?: Mode | undefined
+		modes: Record<string, ForceRatioMode>
+		defaultMode?: ForceRatioMode
+		currentMode?: ForceRatioMode | undefined
 		containerType?: CSS.Properties['containerType']
 		outerClass?: ClassValue
 		gridClass?: ClassValue
