@@ -2,6 +2,7 @@
 	"name": "@mdrv/sv",
 	"private": "true",
 	"workspaces": ["packages/*[^~]"],
+	"packageManager": "bun@latest",
 	"prettier": {
 		"bracketSameLine": false,
 		"printWidth": 80,
