@@ -1,0 +1,13 @@
+{
+  "name": "@mdrv/sv",
+  "private": "true",
+  "version": "1.0.0",
+  "workspaces": ["packages/*[^~]"],
+	"prettier": {
+		"bracketSameLine": false,
+		"printWidth": 80,
+		"semi": false,
+		"singleQuote": true,
+		"tabWidth": 4
+	}
+}

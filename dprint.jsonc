@@ -1,0 +1,27 @@
+{
+	"useTabs": true,
+	"markdown": {},
+	"toml": {},
+	"typescript": {
+		"semiColons": "asi",
+		"quoteStyle": "preferSingle"
+	},
+	"malva": {},
+	"markup": {
+		"quotes": "single",
+		"svelte.scriptIndent": true,
+		"svelte.styleIndent": true
+	},
+	"yaml": {
+		"quotes": "forceDouble"
+	},
+	"excludes": ["**/node_modules", "**/*-lock.json", "fontsource.css"],
+	"plugins": [
+		"https://plugins.dprint.dev/markdown-0.20.0.wasm",
+		"https://plugins.dprint.dev/toml-0.7.0.wasm",
+		"https://plugins.dprint.dev/typescript-0.95.12.wasm",
+		"https://plugins.dprint.dev/g-plane/malva-v0.15.0.wasm",
+		"https://plugins.dprint.dev/g-plane/markup_fmt-v0.24.1.wasm",
+		"https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.1.wasm"
+	]
+}
