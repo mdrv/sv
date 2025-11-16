@@ -1,6 +1,6 @@
 {
-	"name": "@mdsv/force-ratio",
-	"version": "0.1.2",
+	"name": "@mdsv/flexible-cards",
+	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
@@ -35,7 +35,6 @@
 		"@sveltejs/kit": "^2.47.1",
 		"@sveltejs/package": "^2.5.4",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
-		"csstype": "^3.2.0",
 		"publint": "^0.3.14",
 		"svelte": "^5.41.0",
 		"svelte-check": "^4.3.3",

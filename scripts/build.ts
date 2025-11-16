@@ -16,7 +16,7 @@ async function buildPackage(packageDir: string) {
 }
 
 async function buildAll() {
-	const packages = ['packages/force-ratio']
+	const packages = ['packages/force-ratio', 'packages/flexible-cards']
 
 	for (const pkg of packages) {
 		await buildPackage(pkg)

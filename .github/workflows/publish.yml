@@ -11,6 +11,7 @@ on:
         type: choice
         options:
           - "@mdsv/force-ratio"
+          - "@mdsv/flexible-cards"
       version-bump:
         description: "Version bump type"
         required: true
@@ -26,10 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
+        uses: actions/checkout@v5
 
       - uses: oven-sh/setup-bun@v2
         with:

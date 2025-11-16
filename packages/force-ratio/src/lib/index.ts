@@ -1,2 +1,2 @@
 // Reexport your entry components here
-export { default, type ForceRatioMode } from './ForceRatio.svelte'
+export { default as ForceRatio, type ForceRatioMode } from './ForceRatio.svelte'
